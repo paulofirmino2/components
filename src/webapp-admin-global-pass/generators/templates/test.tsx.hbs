@@ -1,0 +1,36 @@
+import { render, screen } from '@testing-library/react';
+import { ThemeProvider } from 'styled-components';
+
+import themeDefault from '../../theme/ThemeDefault';
+
+import { {{ pascalCase name }}, {{ pascalCase name }}Props } from '.';
+
+const builder = (props: {{ pascalCase name }}Props = {}): {{ pascalCase name }}Props => ({
+  ...props,
+});
+
+const setup = (props = { {{camelCase name}}Props: builder() }) => {
+  const { {{camelCase name}}Props } = props;
+  const renderResult = render(
+    <ThemeProvider theme={themeDefault}>
+      <{{ pascalCase name }} {...{{camelCase name}}Props} />
+    </ThemeProvider>,
+  );
+
+  const element = renderResult.getByRole('heading');
+
+  return {
+    element,
+    {{camelCase name}}Props,
+    ...renderResult,
+  };
+};
+
+describe('<{{ pascalCase name }} />', () => {
+  it('should render the heading', () => {
+    setup();
+    expect(
+      screen.getByRole('heading', { name: /{{ pascalCase name }}/i })
+    ).toBeInTheDocument();
+  });
+});

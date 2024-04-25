@@ -1,0 +1,42 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="🚀 Get Started/Usage/Styled Components" />
+
+# Usage styled component with theme provider
+
+```css
+import styled from 'styled-components';
+
+export const ButtonWrapper = styled.button`
+  align-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.white};
+  padding: ${({ theme }) => theme.spacing.small};
+`;
+```
+
+## With breakpoint
+
+```css
+import styled from 'styled-components';
+
+import { breakpoints } from 'diffuse-ds';
+
+export const ButtonWrapper = styled.button`
+  align-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.white};
+  padding: ${({ theme }) => theme.spacing.small};
+
+
+  @media (mix-width: ${breakpoints.sm}) {
+    width: 100%;
+  }
+`;
+```

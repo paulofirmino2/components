@@ -1,0 +1,85 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="🚀 Get Started/Usage/Theming" />
+
+# Theming
+
+## Webfont
+
+You also need to add a `Poppins`, just call it in your `<head>`.
+
+```html
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+  rel="stylesheet"
+/>
+```
+
+You can create your own theme, just override the variables
+
+```javascript
+const customTheme = {
+  colors: {
+    primary: '#000000',
+    secondary: '#D95A88',
+    tertiary: '#b80561',
+    error: '#ED173F',
+    tag: {
+      base: '#5087EC',
+      refresh: '#31DEB4',
+    },
+    approval: {
+      primary: '#F9B0B4',
+      secondary: '#E6E6E6',
+      tertiary: '#B8E1FF',
+      quaternary: '#9FDEDC',
+    },
+    channel: {
+      primary: '#F1B69D',
+      secondary: '#FF9A9F',
+      tertiary: '#FFE7A0',
+      quaternary: '#FFAAC9',
+    },
+    white: '#ffffff',
+    gray: {
+      100: '#F5F5F5',
+      200: '#D2D2D2',
+      300: '#A5A5A5',
+      400: '#555555',
+      500: '#e6e6e6',
+      600: '#cecece',
+      700: '#d9d9d9',
+    },
+  },
+  fontSize: {
+    xs: '1rem',
+    heading4: '1.2rem',
+    buttonTitle: '1.4rem',
+    heading3: '1.6rem',
+    lg: '1.8rem',
+    xl: '2.4rem',
+    heading2: '2rem',
+    heading1: '2.8rem',
+    xxl: '3.2rem',
+  },
+  fontFamily: {
+    base: 'Poppins',
+  },
+  breakpoint: {
+    sm: '450px',
+    md: '768px',
+    lg: '1170px',
+    xl: '1440px',
+  },
+  spacing: {
+    xSmall: '1.6rem',
+    small: '2.4rem',
+    medium: '2.8rem',
+    xMedium: '4.6rem',
+    big: '8.8rem',
+    xBig: '1.57rem',
+  },
+};
+
+export default customTheme;
+```
