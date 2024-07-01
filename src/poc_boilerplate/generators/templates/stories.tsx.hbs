@@ -1,0 +1,35 @@
+import { Meta, StoryFn } from '@storybook/react';
+
+import { Canvas, Container, Row, Title } from '../../utils/StoriesComponents';
+
+import { {{ pascalCase name }} as {{ pascalCase name }}Component, {{ pascalCase name }}Props } from '.';
+
+const meta: Meta = {
+  title: '🧩 Components/Forms/{{ pascalCase name }}',
+  component: {{ pascalCase name }}Component,
+  argTypes: {},
+  parameters: {
+    controls: { expanded: true },
+  },
+};
+
+const argsProps: {{ pascalCase name }}Props = {};
+
+export default meta;
+
+const Template: StoryFn<{{ pascalCase name }}Props> = args => (
+  <Canvas>
+    <Title> {{ pascalCase name }} default</Title>
+    <Container>
+      <Row>
+        <{{ pascalCase name }}Component {...args} />
+      </Row>
+    </Container>
+  </Canvas>
+);
+
+export const Default = Template.bind({});
+
+Default.parameters = { options: { showPanel: true } };
+
+Default.args = { ...argsProps };
